@@ -6,6 +6,13 @@
             "breed": "Poodle",
             "customerId": 1,
             "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Puddles",
+            "breed": "Golden Retriever",
+            "customerId": 1,
+            "locationId": 2
         }
     ],
     "customers": [
