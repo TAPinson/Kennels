@@ -11,8 +11,15 @@
             "id": 2,
             "name": "Puddles",
             "breed": "Golden Retriever",
-            "customerId": 1,
+            "customerId": 2,
             "locationId": 2
+        },
+        {
+            "id": 3,
+            "name": "Goober",
+            "breed": "Pug",
+            "customerId": 3,
+            "locationId": 1
         }
     ],
     "customers": [
@@ -20,9 +27,40 @@
             "id": 1,
             "name": "Hannah Hall",
             "address": "7002 Chestnut Ct"
+        },
+        {
+            "id": 2,
+            "name": "Jeff Fisher",
+            "address": "123 Fake St"
+        },
+        {
+            "id": 3,
+            "name": "Louis Anderson",
+            "address": "804 Maple Dr"
         }
     ],
-    "employees": [],
+    "employees": [
+        {
+            "id": 1,
+            "name": "Jeremy Bakker",
+            "locationId": 2
+        },
+        {
+            "id": 2,
+            "name": "Luther Bakker",
+            "locationId": 2
+        },
+        {
+            "id": 3,
+            "name": "Ronald Smith",
+            "locationId": 1
+        },
+        {
+            "id": 4,
+            "name": "Bill Farmer",
+            "locationId": 1
+        }
+    ],
     "locations": [
         {
             "id": 1,
@@ -33,6 +71,11 @@
             "id": 2,
             "name": "Nashville South",
             "address": "209 Emory Drive"
+        },
+        {
+            "id": 3,
+            "name": "Nashvile SouthWest",
+            "address": "111 Animal Kennel Dr"
         }
     ]
 }
