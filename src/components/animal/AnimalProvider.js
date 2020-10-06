@@ -43,3 +43,17 @@ export const AnimalProvider = (props) => {
         </AnimalContext.Provider>
     )
 }
+
+
+
+
+// const addAnimal = animal => {
+//     return fetch("http://localhost:8088/animals", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify(animal)
+//     })
+//     .then(getAnimals)
+// }

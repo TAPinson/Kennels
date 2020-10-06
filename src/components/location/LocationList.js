@@ -4,15 +4,13 @@ import { LocationCard } from "./LocationCard"
 import "./Location.css"
 
 export const LocationList = () => {
-   // This state changes when `getLocations()` is invoked below
-    const { locations, getLocations } = useContext(LocationContext)
-	//useEffect - reach out to the world for something
-    useEffect(() => {
-		console.log("LocationList: useEffect - getLocations")
-		getLocations()
-		
+  // This state changes when `getLocations()` is invoked below
+  const { locations, getLocations } = useContext(LocationContext)
+  //useEffect - reach out to the world for something
+  useEffect(() => {
+    console.log("LocationList: useEffect - getLocations")
+    getLocations()
     }, [])
-
 
     return (	
 		<div className="locations">
