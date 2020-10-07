@@ -28,6 +28,7 @@ export const ApplicationViews = () => {
                 </Route>
             </AnimalProvider>
 
+            {/* Render the animal create form when http://localhost:3000/animals/create */}
             <AnimalProvider>
                 <LocationProvider>
                     <CustomerProvider>
@@ -37,12 +38,6 @@ export const ApplicationViews = () => {
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
-
-
-
-
-
-
 
             {/* Render the locations list when http://localhost:3000/locations */}
             <LocationProvider>

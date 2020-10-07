@@ -32,18 +32,6 @@
       "locationId": 1,
       "customerId": 1,
       "id": 5
-    },
-    {
-      "name": "1111111111",
-      "locationId": 1,
-      "customerId": 1,
-      "id": 6
-    },
-    {
-      "name": "aaaaaaaaaaaaa",
-      "locationId": 1,
-      "customerId": 1,
-      "id": 7
     }
   ],
   "customers": [
@@ -61,6 +49,18 @@
       "id": 3,
       "name": "Louis Anderson",
       "address": "804 Maple Dr"
+    },
+    {
+      "email": "travispinson@gmail.com",
+      "password": "ssss",
+      "name": "Travis Pinson",
+      "id": 4
+    },
+    {
+      "email": "art@VanDelayIndustries.com",
+      "password": "ssss",
+      "name": "Art VanDelay",
+      "id": 5
     }
   ],
   "employees": [
