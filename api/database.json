@@ -37,28 +37,26 @@
   "customers": [
     {
       "id": 1,
+      "email": "hannahhall@gmail.com",
       "name": "Hannah Hall",
-      "address": "7002 Chestnut Ct"
     },
     {
       "id": 2,
+      "email": "jefffisher@gmail.com",
       "name": "Jeff Fisher",
-      "address": "123 Fake St"
     },
     {
       "id": 3,
+      "email": "louisanderson@gmail.com",
       "name": "Louis Anderson",
-      "address": "804 Maple Dr"
     },
     {
       "email": "travispinson@gmail.com",
-      "password": "ssss",
       "name": "Travis Pinson",
       "id": 4
     },
     {
       "email": "art@VanDelayIndustries.com",
-      "password": "ssss",
       "name": "Art VanDelay",
       "id": 5
     }

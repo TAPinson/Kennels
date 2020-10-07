@@ -1,38 +1,30 @@
 import React, { useRef } from "react"
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import "./Login.css"
-import { useHistory } from 'react-router-dom'
-
 
 
 export const Login = props => {
     const email = useRef()
     const password = useRef()
     const existDialog = useRef()
-    const passwordDialog = useRef()
-    const history = useHistory();
-    
+    const history = useHistory()
 
     const existingUserCheck = () => {
         return fetch(`http://localhost:8088/customers?email=${email.current.value}`)
-            .then(_ => _.json())
+            .then(res => res.json())
             .then(user => user.length ? user[0] : false)
     }
 
     const handleLogin = (e) => {
         e.preventDefault()
-        
+
         existingUserCheck()
-        
             .then(exists => {
-                
-                if (exists && exists.password === password.current.value) {
-                    
+                if (exists) {
                     localStorage.setItem("kennel_customer", exists.id)
                     history.push("/")
-                } else if (exists && exists.password !== password.current.value) {
-                    passwordDialog.current.showModal()
-                } else if (!exists) {
+                } else {
                     existDialog.current.showModal()
                 }
             })
@@ -44,10 +36,7 @@ export const Login = props => {
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => existDialog.current.close()}>Close</button>
             </dialog>
-            <dialog className="dialog dialog--password" ref={passwordDialog}>
-                <div>Password does not match</div>
-                <button className="button--close" onClick={e => passwordDialog.current.close()}>Close</button>
-            </dialog>
+
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h1>Nashville Kennels</h1>
@@ -59,14 +48,6 @@ export const Login = props => {
                             className="form-control"
                             placeholder="Email address"
                             required autoFocus />
-                    </fieldset>
-                    <fieldset>
-                        <label htmlFor="inputPassword"> Password </label>
-                        <input ref={password} type="password"
-                            id="password"
-                            className="form-control"
-                            placeholder="Password"
-                            required />
                     </fieldset>
                     <fieldset>
                         <button type="submit">
