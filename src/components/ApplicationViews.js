@@ -12,6 +12,7 @@ import { LocationList } from './location/LocationList'
 import { LocationProvider } from "./location/LocationProvider"
 import { AnimalForm } from './animal/AnimalForm'
 import { AnimalDetail } from "./animal/AnimalDetail"
+import { EmployeeForm } from "./employee/EmployeeForm"
 
 
 
@@ -35,22 +36,32 @@ export const ApplicationViews = () => {
                 <LocationProvider>
                     <CustomerProvider>
                         <Route exact path="/animals/create">
-                        <AnimalForm />
+                            <AnimalForm />
                         </Route>
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
 
+            {/* Render the employee create form when http://localhost:3000/employees/create */}
+            <EmployeeProvider>
+                <LocationProvider>
+                    <Route exact path="/employees/create">
+                        <EmployeeForm />
+                    </Route>
+                </LocationProvider>
+            </EmployeeProvider>
+
+
+
+
+
+
+            {/* Render the expanded animal form when http://localhost:3000/animals/detail/animalId */}
             <AnimalProvider>
                 <Route exact path="/animals/detail/:animalId(\d+)">
                     <AnimalDetail />
                 </Route>
             </AnimalProvider>
-
-
-
-
-
 
             {/* Render the locations list when http://localhost:3000/locations */}
             <LocationProvider>
@@ -68,7 +79,7 @@ export const ApplicationViews = () => {
 
             {/* Render the employees list when http://localhost:3000/employees */}
             <EmployeeProvider>
-                <Route path="/employees">
+                <Route exact path="/employees">
                     <EmployeeList />
                 </Route>
             </EmployeeProvider>

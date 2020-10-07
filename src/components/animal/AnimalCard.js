@@ -9,7 +9,5 @@ export const AnimalCard = ({ animal }) => (
                 { animal.name }
             </Link>
         </h3>
-            
-      
     </section>
 )
