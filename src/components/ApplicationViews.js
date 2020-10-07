@@ -11,6 +11,8 @@ import { EmployeeList } from './employee/EmployeeList'
 import { LocationList } from './location/LocationList'
 import { LocationProvider } from "./location/LocationProvider"
 import { AnimalForm } from './animal/AnimalForm'
+import { AnimalDetail } from "./animal/AnimalDetail"
+
 
 
 export const ApplicationViews = () => {
@@ -38,6 +40,17 @@ export const ApplicationViews = () => {
                     </CustomerProvider>
                 </LocationProvider>
             </AnimalProvider>
+
+            <AnimalProvider>
+                <Route exact path="/animals/detail/:animalId(\d+)">
+                    <AnimalDetail />
+                </Route>
+            </AnimalProvider>
+
+
+
+
+
 
             {/* Render the locations list when http://localhost:3000/locations */}
             <LocationProvider>

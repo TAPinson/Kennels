@@ -19,18 +19,18 @@
       "name": "Goober",
       "breed": "Pug",
       "customerId": 3,
-      "locationId": 1
+      "locationId": 3
     },
     {
       "name": "Rufus",
       "locationId": 3,
-      "customerId": 3,
+      "customerId": 4,
       "id": 4
     },
     {
       "name": "Neb",
       "locationId": 1,
-      "customerId": 1,
+      "customerId": 5,
       "id": 5
     }
   ],
