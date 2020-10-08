@@ -124,13 +124,8 @@
     },
     {
       "id": 7,
-      "name": "!!!!!!!!!!!!!!!!",
-      "address": "eeeeeeeeeeeee"
-    },
-    {
-      "name": "111111111111",
-      "address": "111 wwwwwwww",
-      "id": 8
+      "name": "Test Location",
+      "address": "123 Test Location Blvd"
     }
   ]
 }
