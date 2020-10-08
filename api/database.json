@@ -5,33 +5,44 @@
       "name": "Doodles",
       "breed": "Poodle",
       "customerId": 1,
-      "locationId": 2
+      "locationId": 2,
+      "treatment": ""
     },
     {
       "id": 2,
       "name": "Puddles",
       "breed": "Golden Retriever",
       "customerId": 2,
-      "locationId": 2
+      "locationId": 2,
+      "treatment": ""
     },
     {
       "id": 3,
       "name": "Goober",
       "breed": "Pug",
       "customerId": 3,
-      "locationId": 3
+      "locationId": 3,
+      "treatment": ""
     },
     {
       "name": "Rufus",
       "locationId": 3,
       "customerId": 4,
-      "id": 4
+      "id": 4,
+      "treatment": ""
     },
     {
+      "id": 5,
       "name": "Neb",
       "locationId": 1,
-      "customerId": 5,
-      "id": 5
+      "treatment": "",
+      "customerId": 5
+    },
+    {
+      "id": 6,
+      "name": "22222222",
+      "locationId": 4,
+      "customerId": 5
     }
   ],
   "customers": [

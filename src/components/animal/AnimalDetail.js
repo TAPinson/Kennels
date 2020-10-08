@@ -4,6 +4,7 @@ import "./Animal.css"
 import { useParams, useHistory } from "react-router-dom"
 
 export const AnimalDetail = () => {
+	
     const { getAnimalById, releaseAnimal } = useContext(AnimalContext)
 	
 	const [animal, setAnimal] = useState({})
@@ -37,6 +38,13 @@ export const AnimalDetail = () => {
 						history.push("/animals")
         		    })
     			}}>Release Animal
+			</button>
+
+			<div className="animal__owner">Customer: {customer.name}</div>
+
+			<button onClick={() => {
+				history.push(`/animals/edit/${animal.id}`)
+				}}>Edit
 			</button>
 			
             
