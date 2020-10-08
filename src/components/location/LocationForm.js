@@ -22,6 +22,19 @@ export const LocationForm = (props) => {
     */
     const name = useRef(null)
     const address = useRef(null)
+
+    const handleControlledInputChange = (event) => {
+        //When changing a state object or array, 
+        //always create a copy make changes, and then set state.
+        const newLocation = { ...location }
+        //animal is an object with properties. 
+        //set the property to the new value
+        newLocation[event.target.name] = event.target.value
+        //update state
+        setLocation(newLocation)
+    }
+
+
     /*
         Get location state on initialization.
     */
@@ -35,27 +48,31 @@ export const LocationForm = (props) => {
         } else {
             if (locationId === undefined) {
                 addLocation({
-                    name: name.current.value,
+                    name: location.name,
                     address: address.current.value
                 })
                 .then(() => history.push("/locations"))
             } else {
                 updateLocation({
                     id: locationId,
-                    name: name.current.value,
+                    name: location.name,
                     address: address.current.value
                 })
                 .then(() => history.push("/locations"))
             }
         }
     }
+    //console.log(name)
     return (
         <form className="locationForm">
             <h2 className="locationForm__title">New Location</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="locationName">Location name: </label>
-                    <input type="text" id="locationName" ref={name} required autoFocus className="form-control" placeholder="Location name" />
+                    <input type="text" id="locationName" name="name" required autoFocus className="form-control" 
+                    placeholder="Location name" 
+                    onChange={handleControlledInputChange} 
+                    defaultValue={location.name} />
                 </div>
             </fieldset>
             <fieldset>
