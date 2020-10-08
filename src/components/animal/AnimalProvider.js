@@ -26,7 +26,7 @@ export const AnimalProvider = (props) => {
             },
             body: JSON.stringify(animal)
         })
-            .then(getAnimals)
+            
     }
 
     const getAnimalById = (id) => {
@@ -38,7 +38,7 @@ export const AnimalProvider = (props) => {
         return fetch(`http://localhost:8088/animals/${animalId}`, {
             method: "DELETE"
         })
-            .then(getAnimals)
+            
     }
 
     const updateAnimal = animal => {
@@ -49,7 +49,7 @@ export const AnimalProvider = (props) => {
             },
             body: JSON.stringify(animal)
         })
-            .then(getAnimals)
+            
     }
 
     /*

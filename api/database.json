@@ -37,12 +37,6 @@
       "locationId": 1,
       "treatment": "",
       "customerId": 5
-    },
-    {
-      "id": 6,
-      "name": "22222222",
-      "locationId": 4,
-      "customerId": 5
     }
   ],
   "customers": [
