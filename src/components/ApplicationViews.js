@@ -76,6 +76,16 @@ export const ApplicationViews = () => {
                 </Route>
             </LocationProvider>
 
+
+            {/* Render the locations list when http://localhost:3000/locations */}
+            <LocationProvider>
+                <Route exact path="/locations/edit/:locationId(\d+)">
+                    <LocationForm />
+                </Route>
+            </LocationProvider>
+
+
+
             {/* Render the locations list when http://localhost:3000/locations/create */}
             <LocationProvider>
                 <Route path="/locations/create">

@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom"
 
 export const LocationList = () => {
   const history = useHistory()
+
   // This state changes when `getLocations()` is invoked below
   const { locations, getLocations } = useContext(LocationContext)
   //useEffect - reach out to the world for something

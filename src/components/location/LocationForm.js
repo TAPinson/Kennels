@@ -1,10 +1,17 @@
-import React, { useContext, useRef, useEffect } from "react"
+import React, { useContext, useRef, useEffect, useState } from "react"
 import { LocationContext } from "../location/LocationProvider"
 import "./Location.css"
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 export const LocationForm = (props) => {
-    const { locations, getLocations, addLocation } = useContext(LocationContext)
+    const { locations, getLocations, addLocation, updateLocation } = useContext(LocationContext)
+
+
+    //for edit, hold on to state of animal in this view
+    const [location, setLocation] = useState({})
+    //wait for data before button is active
+    const [isLoading, setIsLoading] = useState(true);
+    const {locationId} = useParams();
     const history = useHistory();
    
     /*
@@ -12,45 +19,39 @@ export const LocationForm = (props) => {
         fields in the form. This will allow you to get the
         value of the input fields later when the user clicks
         the save button.
-
     */
     const name = useRef(null)
     const address = useRef(null)
-
-
     /*
-        Get employee state and location state on initialization.
+        Get location state on initialization.
     */
     useEffect(() => {
        getLocations()
     }, [])
 
     const constructNewLocation = () => {
-        /*
-            The `location` and `employee` variables below are
-            the references attached to the input fields. You
-            can't just ask for the `.value` property directly,
-            but rather `.current.value` now in React.
-        */
-        
-        
-
         if (address === 0) {
             window.alert("Please select a location")
         } else {
-            addLocation({
-                name: name.current.value,
-                address: address.current.value
-            })
-            .then(() => history.push("/locations"))
+            if (locationId === undefined) {
+                addLocation({
+                    name: name.current.value,
+                    address: address.current.value
+                })
+                .then(() => history.push("/locations"))
+            } else {
+                updateLocation({
+                    id: locationId,
+                    name: name.current.value,
+                    address: address.current.value
+                })
+                .then(() => history.push("/locations"))
+            }
         }
     }
-
-    
-
     return (
         <form className="locationForm">
-            <h2 className="locationForm__title">New Employee</h2>
+            <h2 className="locationForm__title">New Location</h2>
             <fieldset>
                 <div className="form-group">
                     <label htmlFor="locationName">Location name: </label>
@@ -59,7 +60,7 @@ export const LocationForm = (props) => {
             </fieldset>
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="location">Assign to location: </label>
+                    <label htmlFor="location">Location Address: </label>
                     <input type="text" id="locationAddress" ref={address} required autoFocus className="form-control" placeholder="Location address" />
                 </div>
             </fieldset>
